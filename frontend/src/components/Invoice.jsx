@@ -107,6 +107,8 @@ const Invoice = ({
     [shippingAddress.city, shippingAddress.state].filter(Boolean).join(', ')
     || 'Gurugram, Haryana';
 
+  const txnId = order.orderTxnId || order.payuTxnId || order.razorpayPaymentId;
+
   const getItemTitle = (item) => {
     const product = item.product || {};
     const title = item.name || product.title || product['SKU Name'] || product.name || 'Product';
@@ -179,6 +181,8 @@ const Invoice = ({
                   <FieldRow
                     leftLabel="Payment Mode"
                     leftValue={paymentModeLabel(order.paymentMethod)}
+                    rightLabel={txnId ? 'Order Txn ID' : ''}
+                    rightValue={txnId}
                   />
                 </tbody>
               </table>

@@ -85,6 +85,7 @@ const AdminInvoiceGenerator = () => {
   const [shippingOverride, setShippingOverride] = useState(null);
   const [includeGst, setIncludeGst] = useState(true);
   const [invoiceDate, setInvoiceDate] = useState(todayDateInputValue);
+  const [orderTxnId, setOrderTxnId] = useState('');
   const [invoiceData, setInvoiceData] = useState(null);
   const [downloading, setDownloading] = useState(false);
   const [exportKey, setExportKey] = useState(0);
@@ -273,6 +274,7 @@ const AdminInvoiceGenerator = () => {
       shipping,
       total,
       invoiceDate,
+      orderTxnId,
     });
 
   const queueExport = (action, payload) => {
@@ -357,6 +359,7 @@ const AdminInvoiceGenerator = () => {
     setProductSearch('');
     setShippingOverride(null);
     setInvoiceDate(todayDateInputValue());
+    setOrderTxnId('');
   };
 
   const formatINR = (n) => `₹${Number(n || 0).toLocaleString('en-IN')}`;
@@ -840,17 +843,29 @@ const AdminInvoiceGenerator = () => {
             )}
 
             <div className="pt-4 border-t border-gray-200 space-y-3">
-              <div className="flex items-center gap-3">
-                <label className="text-sm text-gray-700 shrink-0 flex items-center gap-1.5">
-                  <FiCalendar className="w-4 h-4 text-pink-600" />
-                  Invoice date
-                </label>
-                <input
-                  type="date"
-                  value={invoiceDate}
-                  onChange={(e) => setInvoiceDate(e.target.value)}
-                  className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:border-pink-500 focus:outline-none"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="flex items-center gap-3">
+                  <label className="text-sm text-gray-700 shrink-0 flex items-center gap-1.5">
+                    <FiCalendar className="w-4 h-4 text-pink-600" />
+                    Invoice date
+                  </label>
+                  <input
+                    type="date"
+                    value={invoiceDate}
+                    onChange={(e) => setInvoiceDate(e.target.value)}
+                    className="flex-1 px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:border-pink-500 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-700 mb-1">Order Txn ID</label>
+                  <input
+                    type="text"
+                    placeholder="Enter transaction ID"
+                    value={orderTxnId}
+                    onChange={(e) => setOrderTxnId(e.target.value)}
+                    className="w-full px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:border-pink-500 focus:outline-none"
+                  />
+                </div>
               </div>
               <label className="flex items-center gap-2 text-sm text-gray-700">
                 <input
