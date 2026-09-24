@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, ShoppingBag } from 'lucide-react';
+import { Mail, MapPin, Phone, ShoppingBag } from 'lucide-react';
 import { COMPANY_INFO } from '../config/companyInfo';
 
 const IconLinkedIn = () => (
@@ -75,8 +75,8 @@ const Footer = () => {
     <>
       <footer className="relative w-full bg-[#0a0b10] text-white overflow-hidden mt-16">
         <div className="relative z-10 max-w-[1180px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 sm:pt-20 pb-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-            <div className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+            <div className="space-y-5 lg:col-span-3">
               <Link to="/" className="inline-flex items-center gap-2.5 group">
                 <span className="w-8 h-8 rounded-[6px] bg-[#c39662] text-white flex items-center justify-center shadow-[0_0_18px_rgba(195,150,98,0.45)]">
                   <ShoppingBag className="w-4 h-4" strokeWidth={2.2} />
@@ -105,16 +105,9 @@ const Footer = () => {
                   );
                 })}
               </div>
-              <a
-                href={`mailto:${COMPANY_INFO.email}`}
-                className="inline-flex items-center gap-2 text-[13px] text-white/70 hover:text-[#c39662] transition-colors"
-              >
-                <Mail className="w-4 h-4 shrink-0" strokeWidth={1.75} />
-                {COMPANY_INFO.email}
-              </a>
             </div>
 
-            <div>
+            <div className="lg:col-span-2">
               <h4 className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/35 mb-5">
                 Company
               </h4>
@@ -129,7 +122,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="lg:col-span-2">
               <h4 className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/35 mb-5">
                 Shop
               </h4>
@@ -144,7 +137,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="lg:col-span-2">
               <h4 className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/35 mb-5">
                 Legal
               </h4>
@@ -156,6 +149,45 @@ const Footer = () => {
                     </Link>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            <div className="lg:col-span-3">
+              <h4 className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/35 mb-5">
+                Contact & Support
+              </h4>
+              <ul className="space-y-3.5">
+                <li>
+                  <a
+                    href={`mailto:${COMPANY_INFO.email}`}
+                    className="flex items-start gap-2.5 text-[15px] text-white/90 hover:text-[#c39662] transition-colors duration-200"
+                  >
+                    <Mail className="w-4 h-4 shrink-0 mt-0.5" strokeWidth={1.75} />
+                    <span>
+                    
+                      <span className="break-all">{COMPANY_INFO.email}</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`tel:${COMPANY_INFO.phone}`}
+                    className="flex items-start gap-2.5 text-[15px] text-white/90 hover:text-[#c39662] transition-colors duration-200"
+                  >
+                    <Phone className="w-4 h-4 shrink-0 mt-0.5" strokeWidth={1.75} />
+                    <span>
+                     
+                      {COMPANY_INFO.phone}
+                    </span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-2.5 text-[15px] leading-relaxed text-white/90">
+                  <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-white/70" strokeWidth={1.75} />
+                  <span>
+                   
+                    {COMPANY_INFO.registeredAddress}
+                  </span>
+                </li>
               </ul>
             </div>
           </div>

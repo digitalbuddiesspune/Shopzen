@@ -2,7 +2,7 @@
 export const COMPANY_INFO = {
   legalName: 'SHOPZEN VENTURES PRIVATE LIMITED',
   brandName: 'Shopzen',
-  website: 'https://buynestventures.shop',
+  website: 'https://www.shopzenventures.shop',
   email: 'shopzen68@gmail.com',
   phone: '+918745015901',
   contactPerson: 'KAPIL YADAV',
