@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, ShoppingBag } from 'lucide-react';
+import { Mail, MapPin, ShoppingBag, User } from 'lucide-react';
 import { COMPANY_INFO } from '../config/companyInfo';
 
 const IconLinkedIn = () => (
@@ -157,6 +157,20 @@ const Footer = () => {
                 Contact & Support
               </h4>
               <ul className="space-y-3.5">
+                <li className="flex items-start gap-2.5 text-[15px] leading-relaxed text-white/90">
+                  <User className="w-4 h-4 shrink-0 mt-0.5 text-white/70" strokeWidth={1.75} />
+                  <span>
+                    <span className="text-white/45">Name: </span>
+                    {COMPANY_INFO.grievanceOfficer}
+                    <span className="block text-[13px] text-white/55">Grievance Officer</span>
+                    <a
+                      href={`tel:${COMPANY_INFO.phone}`}
+                      className="mt-1 block text-white/90 hover:text-[#c39662] transition-colors duration-200"
+                    >
+                      {COMPANY_INFO.phone}
+                    </a>
+                  </span>
+                </li>
                 <li>
                   <a
                     href={`mailto:${COMPANY_INFO.email}`}
@@ -166,18 +180,6 @@ const Footer = () => {
                     <span>
                     
                       <span className="break-all">{COMPANY_INFO.email}</span>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${COMPANY_INFO.phone}`}
-                    className="flex items-start gap-2.5 text-[15px] text-white/90 hover:text-[#c39662] transition-colors duration-200"
-                  >
-                    <Phone className="w-4 h-4 shrink-0 mt-0.5" strokeWidth={1.75} />
-                    <span>
-                     
-                      {COMPANY_INFO.phone}
                     </span>
                   </a>
                 </li>

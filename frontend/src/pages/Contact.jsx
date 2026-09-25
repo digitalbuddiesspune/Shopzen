@@ -92,8 +92,15 @@ const Contact = () => {
               {COMPANY_INFO.registeredAddress}
             </p>
             <p className="text-sm text-gray-500 mt-3">
-              Contact Person: <strong className="text-gray-700">{COMPANY_INFO.contactPerson}</strong>
+              Name: <strong className="text-gray-700">{COMPANY_INFO.grievanceOfficer}</strong>
             </p>
+            <p className="text-sm font-medium text-gray-700">Grievance Officer</p>
+            <a
+              href={`tel:${COMPANY_INFO.phone}`}
+              className="mt-1 inline-block text-sm font-semibold text-gray-900 hover:text-rose-600 transition-colors"
+            >
+              {COMPANY_INFO.phone}
+            </a>
           </div>
 
           {/* Business Hours Card */}

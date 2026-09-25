@@ -6,6 +6,7 @@ export const COMPANY_INFO = {
   email: 'shopzen68@gmail.com',
   phone: '+918745015901',
   contactPerson: 'KAPIL YADAV',
+  grievanceOfficer: 'Kapil Yadav',
   registeredAddress:
     'Fourth Floor, Unit No OF-437, Tower A2, Spaze I Tech Park, Sohna Road, Sector 49, Gurugram, Haryana 122018',
   gstin: '06ABUCSO304BIZP',

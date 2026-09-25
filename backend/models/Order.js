@@ -47,5 +47,7 @@ const OrderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const Order = mongoose.models.Order || mongoose.model('Order', OrderSchema);
+export const Order =
+  mongoose.models.SHOPZEN_orders ||
+  mongoose.model('SHOPZEN_orders', OrderSchema, 'SHOPZEN_orders');
 export default Order;
