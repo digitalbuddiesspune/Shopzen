@@ -9,7 +9,7 @@ export const COMPANY_INFO = {
   grievanceOfficer: 'Kapil Yadav',
   registeredAddress:
     'Fourth Floor, Unit No OF-437, Tower A2, Spaze I Tech Park, Sohna Road, Sector 49, Gurugram, Haryana 122018',
-  gstin: '06ABUCSO304BIZP',
+  gstin: '06ABUCS0304B1ZP',
   cin: 'U47912HR2026PTC146574',
   pan: 'HELPS0440N',
   tan: 'DELB32873B',

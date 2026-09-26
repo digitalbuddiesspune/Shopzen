@@ -196,8 +196,12 @@ const Footer = () => {
 
           <p className="relative z-10 mt-16 sm:mt-20 max-w-3xl mx-auto text-center text-[12px] leading-relaxed text-white/35">
             {COMPANY_INFO.legalName} is an e-commerce retailer of beauty, wellness, and everyday
-            essentials. Please review our policies before placing an order. GSTIN: {COMPANY_INFO.gstin}
-            {' · '}CIN: {COMPANY_INFO.cin}.
+            essentials. Please review our policies before placing an order.
+          </p>
+          <p className="relative z-10 mt-2 max-w-3xl mx-auto text-center text-[12px] leading-relaxed text-white/35">
+            GST: {COMPANY_INFO.gstin}
+            {' · '}
+            CIN: {COMPANY_INFO.cin}
           </p>
 
           <div className="relative z-10 mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-white/40">
